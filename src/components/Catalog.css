@@ -1,0 +1,36 @@
+.crd{
+    width: 300px;
+    border: 2px grey outset;
+    border-radius: 12px;
+    padding: 5px;
+    -webkit-transition: width 2s, height 4s; /* For Safari 3.1 to 6.0 */
+    transition: width 2s, height 4s;
+    box-shadow: 5px 7px #b3b1b1;
+}
+.crdimg{
+    width: 250px;
+    margin-left: 8%;
+    max-height: 200px;
+    height: 150px;
+}
+.crd:hover{
+    width: 350px;
+    height: 300px;
+    
+}
+.crd:hover>.crdimg{
+    width: 280px;
+    margin-left: 10%;
+}
+
+  hr.style16 {
+	height: 10px;
+    border: 0;
+    width: 90%;
+	box-shadow: 0 10px 10px -10px #8c8b8b inset;
+}
+h2{
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size:38px;
+}

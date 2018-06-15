@@ -1,0 +1,12 @@
+body{
+    margin: 40px 80px;
+    width: calc(100% - 160px);
+    background: rgba(228, 227, 227, 0.5);
+    color: black;
+    transition: background-color 1s ease-in-out;
+    height: 100%;
+}
+body:hover{
+    background: #53a7ea;
+    color: whitesmoke
+}

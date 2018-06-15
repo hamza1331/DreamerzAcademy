@@ -1,0 +1,17 @@
+#course{
+    border-radius: 100px;
+    width: 500px;
+    height: 400px;
+}
+#email,#pwd{
+    min-width: 350px;
+}
+#pwd{
+    margin-bottom: 25px;
+}
+.frm{
+    width: 500px;
+    height: 150px;
+    border: 2px outset gray;
+    border-radius: 50px;
+}
