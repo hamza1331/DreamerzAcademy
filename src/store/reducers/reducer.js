@@ -5,6 +5,10 @@ const initialState={
     prod:[],
     gen:[],
     photo:[],
+    progCourses:[],
+    genCourses:[],
+    prodCourses:[],
+    photoCourses:[],
     open:false,
     courses
 }
@@ -67,7 +71,6 @@ export default (state = initialState,action)=>{
         case 'UPDATE_ENROLL_PHOTO':
         let oldData7=state.courses
         oldData7.photo[action.payload].enrolled=true
-        console.log(oldData7.general[action.payload].enrolled)
         return Object.assign({},state,{
             courses:oldData7
         })
@@ -76,9 +79,65 @@ export default (state = initialState,action)=>{
             open:true
         })
         case 'CLOSE_MODAL':
-        console.log('in reducer of close modal...')
         return Object.assign({},state,{
             open:false
+        })
+        case 'UPDATE_PROG_COURSES':
+        let oldData8=state.progCourses
+        state.courses.prog.map(course=>{
+            if(course.ID===action.payload)
+                oldData8.push(course)
+        })
+        return Object.assign({},state,{
+            progCourses:oldData8
+        })
+        case 'UPDATE_GEN_COURSES':
+        let oldData9=state.genCourses
+        // oldData9.push( state.courses.general.filter(data=>{
+        //     return data.ID===action.payload
+        // }))
+        state.courses.general.map((course)=>{
+            if(course.ID===action.payload){
+                oldData9.push(course)
+            }
+        })
+        return Object.assign({},state,{
+            genCourses:oldData9
+        })
+        case 'UPDATE_PHOTO_COURSES':
+        let oldData10=state.photoCourses
+        state.courses.photo.map((course=>{
+            if(course.ID===action.payload){
+                oldData10.push(course)
+            }
+        }))
+        return Object.assign({},state,{
+            photoCourses:oldData10
+        })
+        case 'UPDATE_PROD_COURSES':
+        let oldData11=state.prodCourses
+        state.courses.prod.map(course=>{
+            if(course.ID===action.payload)
+                oldData11.push(course)
+        })
+        return Object.assign({},state,{
+            prodCourses:oldData11
+        })
+        case 'RESET_GEN_COURSE':
+        return Object.assign({},state,{
+            genCourses:[]
+        })
+        case 'RESET_PROG_COURSE':
+        return Object.assign({},state,{
+            progCourses:[]
+        })
+        case 'RESET_PHOTO_COURSE':
+        return Object.assign({},state,{
+            photoCourses:[]
+        })
+        case 'RESET_PROD_COURSE':
+        return Object.assign({},state,{
+            prodCourses:[]
         })
         default:
         return state

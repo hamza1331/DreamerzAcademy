@@ -8,6 +8,8 @@ import { RingLoader } from 'react-spinners';
 class Home extends Component {
     constructor(props) {
         super(props)
+        this.handleCatalogLink = this.handleCatalogLink.bind(this)
+        this.handleHomeLink = this.handleHomeLink.bind(this)
         this.state = {
             email: '',
             pwd: '',
@@ -43,7 +45,7 @@ class Home extends Component {
     handleRegister(e) {
         e.preventDefault()
         this.setState({
-            loading:true
+            loading: true
         })
         firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.pwd).then(() => {
             console.log('user created succesfully')
@@ -51,7 +53,7 @@ class Home extends Component {
             this.setState({
                 email: '',
                 pwd: '',
-                loading:false
+                loading: false
             })
             this.props.login()
             this.props.history.push('/catalog')
@@ -70,13 +72,13 @@ class Home extends Component {
     handleLogin(e) {
         e.preventDefault()
         this.setState({
-            loading:true
+            loading: true
         })
         firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.pwd).then(() => {
             this.setState({
                 email: '',
                 pwd: '',
-                loading:false
+                loading: false
             })
             this.props.login()
             this.props.history.push('/catalog')
@@ -94,10 +96,10 @@ class Home extends Component {
                 <nav className="navbar navbar-inverse navbar-fixed-top">
                     <div className="container-fluid">
                         <div className="navbar-header">
-                            <a onClick={(e) => this.handleHomeLink(e)} className="navbar-brand" href="#">DevAcademy</a>
+                            <a onClick={this.handleHomeLink} className="navbar-brand">DreamerzAcademy</a>
                         </div>
                         <ul className="nav navbar-nav navbar-right">
-                            <li><a onClick={(e) => this.handleCatalogLink(e)} href="#"><span className="glyphicon"></span> COURSE CATALOG</a></li>
+                            <li><a onClick={this.handleCatalogLink}><span className="glyphicon"></span> COURSE CATALOG</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -156,10 +158,10 @@ class Home extends Component {
                                 </form>
                             </div>
                         </div>
-                <RingLoader
-                    color={'#123abc'}
-                    loading={this.state.loading}
-                />
+                        <RingLoader
+                            color={'#123abc'}
+                            loading={this.state.loading}
+                        />
                     </div>
                 </div>
             </div>

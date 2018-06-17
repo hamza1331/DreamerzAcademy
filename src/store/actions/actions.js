@@ -93,3 +93,63 @@ export function updateEnrollStatusPhoto(index){
         })
     }
 }
+export function updateProgCourses(id){
+    return dispatch=>{
+        dispatch({
+            type:'UPDATE_PROG_COURSES',
+            payload:id
+        })
+    }
+}
+export function updateGenCourses(id){
+    return dispatch=>{
+        dispatch({
+            type:'UPDATE_GEN_COURSES',
+            payload:id
+        })
+    }
+}
+export function updatePhotoCourses(id){
+    return dispatch=>{
+        dispatch({
+            type:'UPDATE_PHOTO_COURSES',
+            payload:id
+        })
+    }
+}
+export function updateProdCourses(id){
+    return dispatch=>{
+        dispatch({
+            type:'UPDATE_PROD_COURSES',
+            payload:id
+        })
+    }
+}
+export function resetGenCourses(){
+    return dispatch=>{
+        dispatch({
+            type:'RESET_GEN_COURSE'
+        })
+    }
+}
+export function resetProdCourses(){
+    return dispatch=>{
+        dispatch({
+            type:'RESET_PROD_COURSE'
+        })
+    }
+}
+export function resetPhotoCourses(){
+    return dispatch=>{
+        dispatch({
+            type:'RESET_PHOTO_COURSE'
+        })
+    }
+}
+export function resetProgCourses(){
+    return dispatch=>{
+        dispatch({
+            type:'RESET_PROG_COURSE'
+        })
+    }
+}

@@ -22,6 +22,8 @@ class ModalTemplate extends React.Component {
     onCloseModalWithLogin(){
         this.props.closeModal()
         this.props.login()
+        this.props.history.push('/catalog')
+        this.props.history.push('/catalog')
     }
     handleChange(e) {
         this.setState({

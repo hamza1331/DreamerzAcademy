@@ -105,7 +105,7 @@ class Catalog extends Component {
         <h2>GENERAL</h2>
         <div className="row">
           {this.props.courses.general.map((course, index) => {
-            return <span> <div className="col-md-3">
+            return <span key={index}> <div className="col-md-3">
               <CardTemplate title={course.title}
                 category='general'
                 key={index}
@@ -125,7 +125,7 @@ class Catalog extends Component {
         <div className="row">
           <h2>PROGRAMMING</h2>
           {this.props.courses.prog.map((course, index) => {
-            return <span> <div className="col-md-3">
+            return <span key={index}> <div className="col-md-3">
               <CardTemplate title={course.title}
                 key={index}
                 category='prog'
@@ -144,7 +144,7 @@ class Catalog extends Component {
         <div className="row">
           <h2>PRODUCTIVITY</h2>
           {this.props.courses.prod.map((course, index) => {
-            return <span> <div className="col-md-3">
+            return <span key={index}> <div className="col-md-3">
               <CardTemplate title={course.title}
                 key={index}
                 category='prod'
@@ -163,7 +163,7 @@ class Catalog extends Component {
         <div className="row">
           <h2>PHOTOGRAPHY</h2>
           {this.props.courses.photo.map((course, index) => {
-            return <span> <div className="col-md-3">
+            return <span key={index}> <div className="col-md-3">
               <CardTemplate title={course.title}
                 key={index}
                 category='photo'
